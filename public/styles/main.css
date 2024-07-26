@@ -5,9 +5,6 @@ h2,
 p,
 ul,
 li,
-form,
-input,
-textarea,
 a {
   margin: 0;
   padding: 0;
@@ -30,9 +27,15 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 h1 {
   font-size: 2.5em;
-  margin-bottom: 20px;
   color: #444;
 }
 
@@ -42,16 +45,18 @@ h2 {
   color: #555;
 }
 
-p,
-input,
-textarea {
+p {
   margin-bottom: 20px;
 }
 
 small {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #888;
+}
+
+a {
+  text-decoration: none;
 }
 
 input,
@@ -70,12 +75,12 @@ textarea:focus {
   border-color: #007bff;
 }
 
-a,
-button {
-  text-decoration: none;
+button,
+a {
+  display: inline-block;
   background-color: #007bff;
   color: #fff;
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 1em;
   border: none;
   border-radius: 4px;
@@ -85,31 +90,42 @@ button {
 
 button.full-width {
   display: block;
-  text-align: center;
   width: 100%;
+  text-align: center;
 }
 
-a,
+a:hover,
 button:hover {
   background-color: #0056b3;
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 li {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light, semi-transparent background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-li:last-child {
-  border-bottom: none;
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-actions {
+  margin-top: 10px;
 }
 
 a.edit {
   background-color: #007bff;
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 
 a.delete {
@@ -121,14 +137,12 @@ a.delete:hover {
 }
 
 #newPostBtn {
-  margin: 20px 0;
   background-color: #2ecc71;
-  padding: 10px 15px;
+  padding: 10px 20px;
   font-size: 1em;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  border: none;
   color: #fff;
   text-align: center;
   text-decoration: none;
